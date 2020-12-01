@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.pictureBoxOrigin = new System.Windows.Forms.PictureBox();
             this.pictureBoxHue = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -48,10 +49,21 @@
             this.lbSimpleVal = new System.Windows.Forms.Label();
             this.trackValMac = new System.Windows.Forms.TrackBar();
             this.panelFlotante = new System.Windows.Forms.Panel();
+            this.btnBlobs = new System.Windows.Forms.Button();
             this.btnActuHsv = new System.Windows.Forms.Button();
             this.lbHue = new System.Windows.Forms.Label();
             this.lbSat = new System.Windows.Forms.Label();
             this.lbVal = new System.Windows.Forms.Label();
+            this.panelInf = new System.Windows.Forms.Panel();
+            this.pictureOmin = new System.Windows.Forms.PictureBox();
+            this.pictureImageIris = new System.Windows.Forms.PictureBox();
+            this.btnHue = new System.Windows.Forms.Button();
+            this.lbIntervalo = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.trackInter2 = new System.Windows.Forms.TrackBar();
+            this.lbSimpleInterval = new System.Windows.Forms.Label();
+            this.trackInter1 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrigin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHue)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -61,6 +73,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackValMac)).BeginInit();
             this.panelFlotante.SuspendLayout();
+            this.panelInf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureOmin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureImageIris)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackInter2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackInter1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxOrigin
@@ -253,12 +270,24 @@
             // 
             // panelFlotante
             // 
+            this.panelFlotante.Controls.Add(this.btnBlobs);
             this.panelFlotante.Controls.Add(this.btnActuHsv);
             this.panelFlotante.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelFlotante.Location = new System.Drawing.Point(1195, 24);
             this.panelFlotante.Name = "panelFlotante";
             this.panelFlotante.Size = new System.Drawing.Size(147, 721);
             this.panelFlotante.TabIndex = 17;
+            // 
+            // btnBlobs
+            // 
+            this.btnBlobs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBlobs.Location = new System.Drawing.Point(37, 105);
+            this.btnBlobs.Name = "btnBlobs";
+            this.btnBlobs.Size = new System.Drawing.Size(75, 32);
+            this.btnBlobs.TabIndex = 27;
+            this.btnBlobs.Text = "BLOB\'S";
+            this.btnBlobs.UseVisualStyleBackColor = true;
+            this.btnBlobs.Click += new System.EventHandler(this.btnBlobs_Click);
             // 
             // btnActuHsv
             // 
@@ -312,12 +341,132 @@
             this.lbVal.TabIndex = 20;
             this.lbVal.Text = "---";
             // 
+            // panelInf
+            // 
+            this.panelInf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panelInf.Controls.Add(this.pictureOmin);
+            this.panelInf.Controls.Add(this.pictureImageIris);
+            this.panelInf.Controls.Add(this.btnHue);
+            this.panelInf.Controls.Add(this.lbIntervalo);
+            this.panelInf.Controls.Add(this.label2);
+            this.panelInf.Controls.Add(this.label1);
+            this.panelInf.Controls.Add(this.trackInter2);
+            this.panelInf.Controls.Add(this.lbSimpleInterval);
+            this.panelInf.Controls.Add(this.trackInter1);
+            this.panelInf.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelInf.Location = new System.Drawing.Point(0, 608);
+            this.panelInf.Name = "panelInf";
+            this.panelInf.Size = new System.Drawing.Size(1195, 137);
+            this.panelInf.TabIndex = 21;
+            // 
+            // pictureOmin
+            // 
+            this.pictureOmin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureOmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.pictureOmin.Location = new System.Drawing.Point(22, 31);
+            this.pictureOmin.Name = "pictureOmin";
+            this.pictureOmin.Size = new System.Drawing.Size(113, 76);
+            this.pictureOmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureOmin.TabIndex = 22;
+            this.pictureOmin.TabStop = false;
+            // 
+            // pictureImageIris
+            // 
+            this.pictureImageIris.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureImageIris.Image = ((System.Drawing.Image)(resources.GetObject("pictureImageIris.Image")));
+            this.pictureImageIris.Location = new System.Drawing.Point(611, 39);
+            this.pictureImageIris.Name = "pictureImageIris";
+            this.pictureImageIris.Size = new System.Drawing.Size(282, 68);
+            this.pictureImageIris.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureImageIris.TabIndex = 26;
+            this.pictureImageIris.TabStop = false;
+            // 
+            // btnHue
+            // 
+            this.btnHue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHue.Location = new System.Drawing.Point(566, 39);
+            this.btnHue.Name = "btnHue";
+            this.btnHue.Size = new System.Drawing.Size(25, 68);
+            this.btnHue.TabIndex = 1;
+            this.btnHue.Text = "HUE";
+            this.btnHue.UseVisualStyleBackColor = true;
+            this.btnHue.Click += new System.EventHandler(this.btnHue_Click);
+            // 
+            // lbIntervalo
+            // 
+            this.lbIntervalo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbIntervalo.AutoSize = true;
+            this.lbIntervalo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIntervalo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbIntervalo.Location = new System.Drawing.Point(273, 11);
+            this.lbIntervalo.Name = "lbIntervalo";
+            this.lbIntervalo.Size = new System.Drawing.Size(65, 24);
+            this.lbIntervalo.TabIndex = 25;
+            this.lbIntervalo.Text = "[0,360]";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.Location = new System.Drawing.Point(144, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(37, 25);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Cs";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(144, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(31, 25);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Ci";
+            // 
+            // trackInter2
+            // 
+            this.trackInter2.Location = new System.Drawing.Point(186, 82);
+            this.trackInter2.Maximum = 360;
+            this.trackInter2.Minimum = 1;
+            this.trackInter2.Name = "trackInter2";
+            this.trackInter2.Size = new System.Drawing.Size(359, 45);
+            this.trackInter2.TabIndex = 23;
+            this.trackInter2.Value = 360;
+            this.trackInter2.Scroll += new System.EventHandler(this.trackInter2_Scroll);
+            // 
+            // lbSimpleInterval
+            // 
+            this.lbSimpleInterval.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbSimpleInterval.AutoSize = true;
+            this.lbSimpleInterval.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSimpleInterval.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbSimpleInterval.Location = new System.Drawing.Point(181, 11);
+            this.lbSimpleInterval.Name = "lbSimpleInterval";
+            this.lbSimpleInterval.Size = new System.Drawing.Size(86, 25);
+            this.lbSimpleInterval.TabIndex = 22;
+            this.lbSimpleInterval.Text = "Intervalo";
+            // 
+            // trackInter1
+            // 
+            this.trackInter1.Location = new System.Drawing.Point(186, 39);
+            this.trackInter1.Maximum = 359;
+            this.trackInter1.Name = "trackInter1";
+            this.trackInter1.Size = new System.Drawing.Size(359, 45);
+            this.trackInter1.TabIndex = 0;
+            this.trackInter1.Scroll += new System.EventHandler(this.trackInter1_Scroll);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(18)))));
             this.ClientSize = new System.Drawing.Size(1342, 745);
+            this.Controls.Add(this.panelInf);
             this.Controls.Add(this.lbVal);
             this.Controls.Add(this.lbSat);
             this.Controls.Add(this.lbHue);
@@ -348,6 +497,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackValMac)).EndInit();
             this.panelFlotante.ResumeLayout(false);
+            this.panelInf.ResumeLayout(false);
+            this.panelInf.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureOmin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureImageIris)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackInter2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackInter1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,6 +534,17 @@
         private System.Windows.Forms.Label lbHue;
         private System.Windows.Forms.Label lbSat;
         private System.Windows.Forms.Label lbVal;
+        private System.Windows.Forms.Panel panelInf;
+        private System.Windows.Forms.TrackBar trackInter2;
+        private System.Windows.Forms.Label lbSimpleInterval;
+        private System.Windows.Forms.TrackBar trackInter1;
+        private System.Windows.Forms.Label lbIntervalo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnHue;
+        private System.Windows.Forms.PictureBox pictureImageIris;
+        private System.Windows.Forms.PictureBox pictureOmin;
+        private System.Windows.Forms.Button btnBlobs;
     }
 }
 

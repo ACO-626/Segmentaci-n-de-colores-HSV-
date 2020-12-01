@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Emgu;
 using Emgu.CV;
 using Emgu.CV.Structure;
+using Emgu.CV.Cvb;
 
 
 namespace Segmentación_de_colores__HSV_
@@ -21,6 +22,7 @@ namespace Segmentación_de_colores__HSV_
         Image<Gray, byte> imgHue;
         Image<Gray, byte> imgSat;
         Image<Gray, byte> imgVal;
+        Image<Gray, byte> imgHueIntervalo;
         bool modHue;
         bool modSat;
         bool modVal;
@@ -44,6 +46,7 @@ namespace Segmentación_de_colores__HSV_
                     img = new Image<Hsv, byte>(ofd.FileName);
 
                     pictureBoxOrigin.Image = img.ToBitmap();
+                    pictureOmin.Image = img.ToBitmap();
                     iniciarMiniaturasHSV();
                 }
             }catch(Exception)
@@ -65,6 +68,7 @@ namespace Segmentación_de_colores__HSV_
             imgHue = img[0];
             imgSat = img[1];
             imgVal = img[2];
+            imgHueIntervalo = img[0];
 
             pictureBoxHue.Image = imgHue.Bitmap;
             pictureBoxSat.Image = imgSat.Bitmap;
@@ -188,10 +192,96 @@ namespace Segmentación_de_colores__HSV_
         {
             lbVal.Text = trackValMac.Value.ToString();
         }
+
+
+
         #endregion
 
+        #region ScrollIntervalo
+        private void trackInter1_Scroll(object sender, EventArgs e)
+        {
+            if(trackInter1.Value>trackInter2.Value)
+            {
+                lbIntervalo.Text = "[-,-]";
+            }else
+            {
+                lbIntervalo.Text = "[" + trackInter1.Value.ToString() + " , " + trackInter2.Value.ToString() + "]";
+            }
+            
+        }
 
+        private void trackInter2_Scroll(object sender, EventArgs e)
+        {
+            if (trackInter1.Value > trackInter2.Value)
+            {
+                lbIntervalo.Text = "[-,-]";
+            }
+            else
+            {
+                lbIntervalo.Text = "[" + trackInter1.Value.ToString() + " , " + trackInter2.Value.ToString() + "]";
+            }
 
+        }
+        #endregion
 
+        #region HUE BOTÓN
+        private void btnHue_Click(object sender, EventArgs e)
+        {
+            double aux = 0;
+            double aux2 = 0;
+            double aux1 = 0;
+            aux2 = trackInter2.Value;
+            aux2 = aux2 * 0.5;
+            aux1 = trackInter1.Value;
+            aux1 = aux1 * 0.5;
+            MessageBox.Show(aux1.ToString());
+            MessageBox.Show(aux2.ToString());
+
+            if (img!=null)
+            {
+                for(int i=0;i<img.Height;i++)
+                {
+                    for (int j = 0; j < img.Width; j++)
+                    {
+                        aux = img[i, j].Hue;
+                        if (aux<aux2 & aux>aux1)
+                        {
+                            
+                            imgHueIntervalo[i, j] = new Gray(aux);
+                        }else
+                        {
+                            if(img[i,j].Satuation==255 & aux==0 )
+                            {
+                                imgHueIntervalo[i, j] = new Gray(0);
+                            }
+                            else
+                            {
+                                imgHueIntervalo[i, j] = new Gray(255);
+                            }
+                            
+                        }
+                        
+                    }
+                }
+                pictureBoxOrigin.Image = imgHueIntervalo.ToBitmap();
+                    
+            }
+            else
+            {
+                importar();
+            }
+        }
+
+        #endregion
+
+        private void btnBlobs_Click(object sender, EventArgs e)
+        {
+            CvBlobs imageblob = new CvBlobs();
+            CvBlobDetector detector = new CvBlobDetector();
+            uint numBlobs = 0;
+            numBlobs = detector.Detect(imgHueIntervalo, imageblob);
+            Image<Bgr, byte> blobImg = detector.DrawBlobs(imgHueIntervalo,imageblob,CvBlobDetector.BlobRenderType.BoundingBox,.1);
+            pictureBoxOrigin.Image = blobImg.ToBitmap();
+        }
     }
 }
