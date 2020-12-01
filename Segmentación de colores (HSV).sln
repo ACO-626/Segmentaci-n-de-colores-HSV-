@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Segmentación de colores (HSV)", "Segmentación de colores (HSV).csproj", "{746AF121-C5BE-4915-9CC2-772CCA4A4D3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{746AF121-C5BE-4915-9CC2-772CCA4A4D3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{746AF121-C5BE-4915-9CC2-772CCA4A4D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{746AF121-C5BE-4915-9CC2-772CCA4A4D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{746AF121-C5BE-4915-9CC2-772CCA4A4D3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5AB0F683-49BF-4759-AFE3-21B38F8BBC81}
+	EndGlobalSection
+EndGlobal
