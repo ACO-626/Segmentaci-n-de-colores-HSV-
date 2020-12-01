@@ -49,6 +49,7 @@
             this.lbSimpleVal = new System.Windows.Forms.Label();
             this.trackValMac = new System.Windows.Forms.TrackBar();
             this.panelFlotante = new System.Windows.Forms.Panel();
+            this.btnBorde = new System.Windows.Forms.Button();
             this.btnBlobs = new System.Windows.Forms.Button();
             this.btnActuHsv = new System.Windows.Forms.Button();
             this.lbHue = new System.Windows.Forms.Label();
@@ -56,7 +57,6 @@
             this.lbVal = new System.Windows.Forms.Label();
             this.panelInf = new System.Windows.Forms.Panel();
             this.pictureOmin = new System.Windows.Forms.PictureBox();
-            this.pictureImageIris = new System.Windows.Forms.PictureBox();
             this.btnHue = new System.Windows.Forms.Button();
             this.lbIntervalo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -64,6 +64,10 @@
             this.trackInter2 = new System.Windows.Forms.TrackBar();
             this.lbSimpleInterval = new System.Windows.Forms.Label();
             this.trackInter1 = new System.Windows.Forms.TrackBar();
+            this.numericFil1 = new System.Windows.Forms.NumericUpDown();
+            this.numericFil2 = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnORG = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrigin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHue)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -75,9 +79,11 @@
             this.panelFlotante.SuspendLayout();
             this.panelInf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureOmin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureImageIris)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackInter2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackInter1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericFil1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericFil2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxOrigin
@@ -270,6 +276,9 @@
             // 
             // panelFlotante
             // 
+            this.panelFlotante.Controls.Add(this.numericFil2);
+            this.panelFlotante.Controls.Add(this.numericFil1);
+            this.panelFlotante.Controls.Add(this.btnBorde);
             this.panelFlotante.Controls.Add(this.btnBlobs);
             this.panelFlotante.Controls.Add(this.btnActuHsv);
             this.panelFlotante.Dock = System.Windows.Forms.DockStyle.Right;
@@ -277,6 +286,18 @@
             this.panelFlotante.Name = "panelFlotante";
             this.panelFlotante.Size = new System.Drawing.Size(147, 721);
             this.panelFlotante.TabIndex = 17;
+            // 
+            // btnBorde
+            // 
+            this.btnBorde.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBorde.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBorde.Location = new System.Drawing.Point(37, 584);
+            this.btnBorde.Name = "btnBorde";
+            this.btnBorde.Size = new System.Drawing.Size(75, 32);
+            this.btnBorde.TabIndex = 28;
+            this.btnBorde.Text = "BIN";
+            this.btnBorde.UseVisualStyleBackColor = true;
+            this.btnBorde.Click += new System.EventHandler(this.btnBorde_Click);
             // 
             // btnBlobs
             // 
@@ -344,8 +365,9 @@
             // panelInf
             // 
             this.panelInf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panelInf.Controls.Add(this.btnORG);
+            this.panelInf.Controls.Add(this.pictureBox1);
             this.panelInf.Controls.Add(this.pictureOmin);
-            this.panelInf.Controls.Add(this.pictureImageIris);
             this.panelInf.Controls.Add(this.btnHue);
             this.panelInf.Controls.Add(this.lbIntervalo);
             this.panelInf.Controls.Add(this.label2);
@@ -361,7 +383,7 @@
             // 
             // pictureOmin
             // 
-            this.pictureOmin.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pictureOmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pictureOmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.pictureOmin.Location = new System.Drawing.Point(22, 31);
             this.pictureOmin.Name = "pictureOmin";
@@ -370,19 +392,9 @@
             this.pictureOmin.TabIndex = 22;
             this.pictureOmin.TabStop = false;
             // 
-            // pictureImageIris
-            // 
-            this.pictureImageIris.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureImageIris.Image = ((System.Drawing.Image)(resources.GetObject("pictureImageIris.Image")));
-            this.pictureImageIris.Location = new System.Drawing.Point(611, 39);
-            this.pictureImageIris.Name = "pictureImageIris";
-            this.pictureImageIris.Size = new System.Drawing.Size(282, 68);
-            this.pictureImageIris.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureImageIris.TabIndex = 26;
-            this.pictureImageIris.TabStop = false;
-            // 
             // btnHue
             // 
+            this.btnHue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnHue.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHue.Location = new System.Drawing.Point(566, 39);
             this.btnHue.Name = "btnHue";
@@ -394,11 +406,11 @@
             // 
             // lbIntervalo
             // 
-            this.lbIntervalo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbIntervalo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbIntervalo.AutoSize = true;
             this.lbIntervalo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIntervalo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbIntervalo.Location = new System.Drawing.Point(273, 11);
+            this.lbIntervalo.Location = new System.Drawing.Point(274, 8);
             this.lbIntervalo.Name = "lbIntervalo";
             this.lbIntervalo.Size = new System.Drawing.Size(65, 24);
             this.lbIntervalo.TabIndex = 25;
@@ -406,11 +418,11 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(144, 82);
+            this.label2.Location = new System.Drawing.Point(149, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 25);
             this.label2.TabIndex = 24;
@@ -418,11 +430,11 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(144, 39);
+            this.label1.Location = new System.Drawing.Point(150, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 25);
             this.label1.TabIndex = 22;
@@ -430,22 +442,25 @@
             // 
             // trackInter2
             // 
-            this.trackInter2.Location = new System.Drawing.Point(186, 82);
+            this.trackInter2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.trackInter2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.trackInter2.Location = new System.Drawing.Point(192, 81);
             this.trackInter2.Maximum = 360;
             this.trackInter2.Minimum = 1;
             this.trackInter2.Name = "trackInter2";
-            this.trackInter2.Size = new System.Drawing.Size(359, 45);
+            this.trackInter2.Size = new System.Drawing.Size(354, 45);
             this.trackInter2.TabIndex = 23;
+            this.trackInter2.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.trackInter2.Value = 360;
             this.trackInter2.Scroll += new System.EventHandler(this.trackInter2_Scroll);
             // 
             // lbSimpleInterval
             // 
-            this.lbSimpleInterval.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbSimpleInterval.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbSimpleInterval.AutoSize = true;
             this.lbSimpleInterval.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSimpleInterval.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbSimpleInterval.Location = new System.Drawing.Point(181, 11);
+            this.lbSimpleInterval.Location = new System.Drawing.Point(182, 7);
             this.lbSimpleInterval.Name = "lbSimpleInterval";
             this.lbSimpleInterval.Size = new System.Drawing.Size(86, 25);
             this.lbSimpleInterval.TabIndex = 22;
@@ -453,12 +468,74 @@
             // 
             // trackInter1
             // 
-            this.trackInter1.Location = new System.Drawing.Point(186, 39);
+            this.trackInter1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.trackInter1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.trackInter1.Location = new System.Drawing.Point(187, 39);
             this.trackInter1.Maximum = 359;
             this.trackInter1.Name = "trackInter1";
             this.trackInter1.Size = new System.Drawing.Size(359, 45);
             this.trackInter1.TabIndex = 0;
             this.trackInter1.Scroll += new System.EventHandler(this.trackInter1_Scroll);
+            // 
+            // numericFil1
+            // 
+            this.numericFil1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericFil1.Location = new System.Drawing.Point(37, 631);
+            this.numericFil1.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numericFil1.Name = "numericFil1";
+            this.numericFil1.Size = new System.Drawing.Size(75, 20);
+            this.numericFil1.TabIndex = 29;
+            this.numericFil1.Value = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
+            // 
+            // numericFil2
+            // 
+            this.numericFil2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericFil2.Location = new System.Drawing.Point(37, 675);
+            this.numericFil2.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numericFil2.Name = "numericFil2";
+            this.numericFil2.Size = new System.Drawing.Size(75, 20);
+            this.numericFil2.TabIndex = 30;
+            this.numericFil2.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(200, 61);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(334, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnORG
+            // 
+            this.btnORG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnORG.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnORG.Location = new System.Drawing.Point(608, 39);
+            this.btnORG.Name = "btnORG";
+            this.btnORG.Size = new System.Drawing.Size(25, 68);
+            this.btnORG.TabIndex = 28;
+            this.btnORG.Text = "ORG";
+            this.btnORG.UseVisualStyleBackColor = true;
+            this.btnORG.Click += new System.EventHandler(this.btnORG_Click);
             // 
             // FormPrincipal
             // 
@@ -500,9 +577,11 @@
             this.panelInf.ResumeLayout(false);
             this.panelInf.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureOmin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureImageIris)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackInter2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackInter1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericFil1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericFil2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -542,9 +621,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHue;
-        private System.Windows.Forms.PictureBox pictureImageIris;
         private System.Windows.Forms.PictureBox pictureOmin;
         private System.Windows.Forms.Button btnBlobs;
+        private System.Windows.Forms.Button btnBorde;
+        private System.Windows.Forms.NumericUpDown numericFil2;
+        private System.Windows.Forms.NumericUpDown numericFil1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnORG;
     }
 }
 

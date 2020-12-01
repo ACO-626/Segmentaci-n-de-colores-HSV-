@@ -22,7 +22,7 @@ namespace Segmentación_de_colores__HSV_
         Image<Gray, byte> imgHue;
         Image<Gray, byte> imgSat;
         Image<Gray, byte> imgVal;
-        Image<Gray, byte> imgHueIntervalo;
+        Image<Gray, byte> imgHueIntervalo;       
         bool modHue;
         bool modSat;
         bool modVal;
@@ -224,8 +224,9 @@ namespace Segmentación_de_colores__HSV_
         }
         #endregion
 
-        #region HUE BOTÓN
-        private void btnHue_Click(object sender, EventArgs e)
+        #region HUEnizar
+
+        private void HUEnizar()
         {
             double aux = 0;
             double aux2 = 0;
@@ -234,23 +235,23 @@ namespace Segmentación_de_colores__HSV_
             aux2 = aux2 * 0.5;
             aux1 = trackInter1.Value;
             aux1 = aux1 * 0.5;
-            MessageBox.Show(aux1.ToString());
-            MessageBox.Show(aux2.ToString());
+            
 
-            if (img!=null)
+            if (img != null)
             {
-                for(int i=0;i<img.Height;i++)
+                for (int i = 0; i < img.Height; i++)
                 {
                     for (int j = 0; j < img.Width; j++)
                     {
                         aux = img[i, j].Hue;
-                        if (aux<aux2 & aux>aux1)
+                        if (aux < aux2 & aux > aux1)
                         {
-                            
+
                             imgHueIntervalo[i, j] = new Gray(aux);
-                        }else
+                        }
+                        else
                         {
-                            if(img[i,j].Satuation==255 & aux==0 )
+                            if (img[i, j].Satuation == 255 & aux == 0 & aux1==0)
                             {
                                 imgHueIntervalo[i, j] = new Gray(0);
                             }
@@ -258,13 +259,13 @@ namespace Segmentación_de_colores__HSV_
                             {
                                 imgHueIntervalo[i, j] = new Gray(255);
                             }
-                            
+
                         }
-                        
+
                     }
                 }
                 pictureBoxOrigin.Image = imgHueIntervalo.ToBitmap();
-                    
+
             }
             else
             {
@@ -274,14 +275,65 @@ namespace Segmentación_de_colores__HSV_
 
         #endregion
 
+        #region HUE BOTÓN
+        private void btnHue_Click(object sender, EventArgs e)
+        {           
+            HUEnizar();
+            btnORG.Enabled = true;
+            btnHue.Enabled = false;
+        }
+
+        #endregion
+
+        #region BlobsDetection
         private void btnBlobs_Click(object sender, EventArgs e)
         {
-            CvBlobs imageblob = new CvBlobs();
+           
+
+            /*CvBlobs imageblob = new CvBlobs();
             CvBlobDetector detector = new CvBlobDetector();
             uint numBlobs = 0;
+            imgHueIntervalo = imgHueIntervalo.ThresholdBinaryInv(new Gray((int)numericFil1.Value), new Gray((int)numericFil2.Value));
+            pictureBoxOrigin.Image = imgHueIntervalo.ToBitmap();            
             numBlobs = detector.Detect(imgHueIntervalo, imageblob);
             Image<Bgr, byte> blobImg = detector.DrawBlobs(imgHueIntervalo,imageblob,CvBlobDetector.BlobRenderType.BoundingBox,.1);
-            pictureBoxOrigin.Image = blobImg.ToBitmap();
+            pictureBoxOrigin.Image = blobImg.ToBitmap();*/
+
+
+
+
+        }
+        #endregion
+
+        #region Binarizar
+        private Image<Gray,byte> binarizar(Image<Gray,byte> imgBin)
+        {
+            HUEnizar();
+            Image<Gray, byte> imgBinResult = new Image<Gray, byte>(img.Width, img.Height);
+            imgBinResult = imgBin.ThresholdBinaryInv(new Gray((int)numericFil1.Value), new Gray((int)numericFil2.Value));
+            return imgBinResult;
+        }
+        #endregion
+
+        #region Borde
+        private void btnBorde_Click(object sender, EventArgs e)
+        {
+            if(img!=null)
+            {
+                pictureBoxOrigin.Image = binarizar(imgHueIntervalo).ToBitmap(); ;
+            }else
+            {
+                importar();
+            }
+            
+        }
+        #endregion
+
+        private void btnORG_Click(object sender, EventArgs e)
+        {
+            pictureBoxOrigin.Image = img.ToBitmap();
+            btnORG.Enabled = false;
+            btnHue.Enabled = true;
         }
     }
 }
