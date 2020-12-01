@@ -49,13 +49,19 @@
             this.lbSimpleVal = new System.Windows.Forms.Label();
             this.trackValMac = new System.Windows.Forms.TrackBar();
             this.panelFlotante = new System.Windows.Forms.Panel();
+            this.numericFil2 = new System.Windows.Forms.NumericUpDown();
+            this.numericFil1 = new System.Windows.Forms.NumericUpDown();
             this.btnBorde = new System.Windows.Forms.Button();
-            this.btnBlobs = new System.Windows.Forms.Button();
             this.btnActuHsv = new System.Windows.Forms.Button();
+            this.btnBlobs = new System.Windows.Forms.Button();
             this.lbHue = new System.Windows.Forms.Label();
             this.lbSat = new System.Windows.Forms.Label();
             this.lbVal = new System.Windows.Forms.Label();
             this.panelInf = new System.Windows.Forms.Panel();
+            this.lbSimpleTamano = new System.Windows.Forms.Label();
+            this.numericTamBlob = new System.Windows.Forms.NumericUpDown();
+            this.btnORG = new System.Windows.Forms.Button();
+            this.pictureSimColorScala = new System.Windows.Forms.PictureBox();
             this.pictureOmin = new System.Windows.Forms.PictureBox();
             this.btnHue = new System.Windows.Forms.Button();
             this.lbIntervalo = new System.Windows.Forms.Label();
@@ -64,10 +70,6 @@
             this.trackInter2 = new System.Windows.Forms.TrackBar();
             this.lbSimpleInterval = new System.Windows.Forms.Label();
             this.trackInter1 = new System.Windows.Forms.TrackBar();
-            this.numericFil1 = new System.Windows.Forms.NumericUpDown();
-            this.numericFil2 = new System.Windows.Forms.NumericUpDown();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnORG = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOrigin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHue)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -77,13 +79,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackValMac)).BeginInit();
             this.panelFlotante.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericFil2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericFil1)).BeginInit();
             this.panelInf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericTamBlob)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSimColorScala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureOmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackInter2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackInter1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericFil1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericFil2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxOrigin
@@ -279,13 +282,48 @@
             this.panelFlotante.Controls.Add(this.numericFil2);
             this.panelFlotante.Controls.Add(this.numericFil1);
             this.panelFlotante.Controls.Add(this.btnBorde);
-            this.panelFlotante.Controls.Add(this.btnBlobs);
             this.panelFlotante.Controls.Add(this.btnActuHsv);
             this.panelFlotante.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelFlotante.Location = new System.Drawing.Point(1195, 24);
             this.panelFlotante.Name = "panelFlotante";
             this.panelFlotante.Size = new System.Drawing.Size(147, 721);
             this.panelFlotante.TabIndex = 17;
+            // 
+            // numericFil2
+            // 
+            this.numericFil2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericFil2.Location = new System.Drawing.Point(37, 675);
+            this.numericFil2.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numericFil2.Name = "numericFil2";
+            this.numericFil2.Size = new System.Drawing.Size(75, 20);
+            this.numericFil2.TabIndex = 30;
+            this.numericFil2.Value = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            // 
+            // numericFil1
+            // 
+            this.numericFil1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericFil1.Location = new System.Drawing.Point(37, 631);
+            this.numericFil1.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.numericFil1.Name = "numericFil1";
+            this.numericFil1.Size = new System.Drawing.Size(75, 20);
+            this.numericFil1.TabIndex = 29;
+            this.numericFil1.Value = new decimal(new int[] {
+            200,
+            0,
+            0,
+            0});
             // 
             // btnBorde
             // 
@@ -299,17 +337,6 @@
             this.btnBorde.UseVisualStyleBackColor = true;
             this.btnBorde.Click += new System.EventHandler(this.btnBorde_Click);
             // 
-            // btnBlobs
-            // 
-            this.btnBlobs.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBlobs.Location = new System.Drawing.Point(37, 105);
-            this.btnBlobs.Name = "btnBlobs";
-            this.btnBlobs.Size = new System.Drawing.Size(75, 32);
-            this.btnBlobs.TabIndex = 27;
-            this.btnBlobs.Text = "BLOB\'S";
-            this.btnBlobs.UseVisualStyleBackColor = true;
-            this.btnBlobs.Click += new System.EventHandler(this.btnBlobs_Click);
-            // 
             // btnActuHsv
             // 
             this.btnActuHsv.Location = new System.Drawing.Point(37, 67);
@@ -319,6 +346,17 @@
             this.btnActuHsv.Text = "HSV";
             this.btnActuHsv.UseVisualStyleBackColor = true;
             this.btnActuHsv.Click += new System.EventHandler(this.btnActuHsv_Click);
+            // 
+            // btnBlobs
+            // 
+            this.btnBlobs.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBlobs.Location = new System.Drawing.Point(562, 41);
+            this.btnBlobs.Name = "btnBlobs";
+            this.btnBlobs.Size = new System.Drawing.Size(25, 68);
+            this.btnBlobs.TabIndex = 27;
+            this.btnBlobs.Text = "BLOB\'S";
+            this.btnBlobs.UseVisualStyleBackColor = true;
+            this.btnBlobs.Click += new System.EventHandler(this.btnBlobs_Click);
             // 
             // lbHue
             // 
@@ -365,8 +403,11 @@
             // panelInf
             // 
             this.panelInf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panelInf.Controls.Add(this.lbSimpleTamano);
+            this.panelInf.Controls.Add(this.numericTamBlob);
             this.panelInf.Controls.Add(this.btnORG);
-            this.panelInf.Controls.Add(this.pictureBox1);
+            this.panelInf.Controls.Add(this.btnBlobs);
+            this.panelInf.Controls.Add(this.pictureSimColorScala);
             this.panelInf.Controls.Add(this.pictureOmin);
             this.panelInf.Controls.Add(this.btnHue);
             this.panelInf.Controls.Add(this.lbIntervalo);
@@ -380,6 +421,60 @@
             this.panelInf.Name = "panelInf";
             this.panelInf.Size = new System.Drawing.Size(1195, 137);
             this.panelInf.TabIndex = 21;
+            // 
+            // lbSimpleTamano
+            // 
+            this.lbSimpleTamano.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbSimpleTamano.AutoSize = true;
+            this.lbSimpleTamano.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSimpleTamano.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbSimpleTamano.Location = new System.Drawing.Point(1068, 27);
+            this.lbSimpleTamano.Name = "lbSimpleTamano";
+            this.lbSimpleTamano.Size = new System.Drawing.Size(81, 15);
+            this.lbSimpleTamano.TabIndex = 32;
+            this.lbSimpleTamano.Text = "Tamaño Blob";
+            // 
+            // numericTamBlob
+            // 
+            this.numericTamBlob.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.numericTamBlob.Location = new System.Drawing.Point(1071, 47);
+            this.numericTamBlob.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericTamBlob.Name = "numericTamBlob";
+            this.numericTamBlob.Size = new System.Drawing.Size(75, 20);
+            this.numericTamBlob.TabIndex = 31;
+            this.numericTamBlob.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // btnORG
+            // 
+            this.btnORG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnORG.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnORG.Location = new System.Drawing.Point(651, 39);
+            this.btnORG.Name = "btnORG";
+            this.btnORG.Size = new System.Drawing.Size(25, 68);
+            this.btnORG.TabIndex = 28;
+            this.btnORG.Text = "ORG";
+            this.btnORG.UseVisualStyleBackColor = true;
+            this.btnORG.Click += new System.EventHandler(this.btnORG_Click);
+            // 
+            // pictureSimColorScala
+            // 
+            this.pictureSimColorScala.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pictureSimColorScala.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureSimColorScala.Image = ((System.Drawing.Image)(resources.GetObject("pictureSimColorScala.Image")));
+            this.pictureSimColorScala.Location = new System.Drawing.Point(200, 61);
+            this.pictureSimColorScala.Name = "pictureSimColorScala";
+            this.pictureSimColorScala.Size = new System.Drawing.Size(334, 30);
+            this.pictureSimColorScala.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureSimColorScala.TabIndex = 27;
+            this.pictureSimColorScala.TabStop = false;
             // 
             // pictureOmin
             // 
@@ -396,7 +491,7 @@
             // 
             this.btnHue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnHue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHue.Location = new System.Drawing.Point(566, 39);
+            this.btnHue.Location = new System.Drawing.Point(606, 39);
             this.btnHue.Name = "btnHue";
             this.btnHue.Size = new System.Drawing.Size(25, 68);
             this.btnHue.TabIndex = 1;
@@ -477,66 +572,6 @@
             this.trackInter1.TabIndex = 0;
             this.trackInter1.Scroll += new System.EventHandler(this.trackInter1_Scroll);
             // 
-            // numericFil1
-            // 
-            this.numericFil1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericFil1.Location = new System.Drawing.Point(37, 631);
-            this.numericFil1.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numericFil1.Name = "numericFil1";
-            this.numericFil1.Size = new System.Drawing.Size(75, 20);
-            this.numericFil1.TabIndex = 29;
-            this.numericFil1.Value = new decimal(new int[] {
-            200,
-            0,
-            0,
-            0});
-            // 
-            // numericFil2
-            // 
-            this.numericFil2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericFil2.Location = new System.Drawing.Point(37, 675);
-            this.numericFil2.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numericFil2.Name = "numericFil2";
-            this.numericFil2.Size = new System.Drawing.Size(75, 20);
-            this.numericFil2.TabIndex = 30;
-            this.numericFil2.Value = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(200, 61);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(334, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnORG
-            // 
-            this.btnORG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnORG.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnORG.Location = new System.Drawing.Point(608, 39);
-            this.btnORG.Name = "btnORG";
-            this.btnORG.Size = new System.Drawing.Size(25, 68);
-            this.btnORG.TabIndex = 28;
-            this.btnORG.Text = "ORG";
-            this.btnORG.UseVisualStyleBackColor = true;
-            this.btnORG.Click += new System.EventHandler(this.btnORG_Click);
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -574,14 +609,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxVal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackValMac)).EndInit();
             this.panelFlotante.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericFil2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericFil1)).EndInit();
             this.panelInf.ResumeLayout(false);
             this.panelInf.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericTamBlob)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSimColorScala)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureOmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackInter2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackInter1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericFil1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericFil2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -626,8 +662,10 @@
         private System.Windows.Forms.Button btnBorde;
         private System.Windows.Forms.NumericUpDown numericFil2;
         private System.Windows.Forms.NumericUpDown numericFil1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureSimColorScala;
         private System.Windows.Forms.Button btnORG;
+        private System.Windows.Forms.Label lbSimpleTamano;
+        private System.Windows.Forms.NumericUpDown numericTamBlob;
     }
 }
 

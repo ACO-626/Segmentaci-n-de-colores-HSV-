@@ -66,9 +66,11 @@ namespace Segmentación_de_colores__HSV_
         private void iniciarMiniaturasHSV()
         {
             imgHue = img[0];
+            
             imgSat = img[1];
             imgVal = img[2];
             imgHueIntervalo = img[0];
+
 
             pictureBoxHue.Image = imgHue.Bitmap;
             pictureBoxSat.Image = imgSat.Bitmap;
@@ -279,8 +281,7 @@ namespace Segmentación_de_colores__HSV_
         private void btnHue_Click(object sender, EventArgs e)
         {           
             HUEnizar();
-            btnORG.Enabled = true;
-            btnHue.Enabled = false;
+            
         }
 
         #endregion
@@ -288,7 +289,33 @@ namespace Segmentación_de_colores__HSV_
         #region BlobsDetection
         private void btnBlobs_Click(object sender, EventArgs e)
         {
-           
+            
+
+            HUEnizar();
+
+            if(img!=null)
+            {
+
+                Image<Hsv, byte> imgBlob = img.Copy();
+
+                Emgu.CV.Util.VectorOfVectorOfPoint contours = new Emgu.CV.Util.VectorOfVectorOfPoint();
+                Mat mat = new Mat();
+                CvInvoke.FindContours(binarizar(imgHueIntervalo), contours, mat, Emgu.CV.CvEnum.RetrType.External, Emgu.CV.CvEnum.ChainApproxMethod.ChainApproxSimple);
+                for (int i = 0; i < contours.Size; i++)
+                {
+                    var area = CvInvoke.ContourArea(contours[i]);
+                    if (area > (int)numericTamBlob.Value)
+                    {
+                        Rectangle rectangulo = CvInvoke.BoundingRectangle(contours[i]);                        
+                        CvInvoke.Rectangle(imgBlob, rectangulo, new MCvScalar(0, 255,255 ), 3, Emgu.CV.CvEnum.LineType.FourConnected, 0);
+                    }
+                }
+                pictureBoxOrigin.Image = imgBlob.ToBitmap();                
+            }else
+            {
+                importar();
+            }
+            
 
             /*CvBlobs imageblob = new CvBlobs();
             CvBlobDetector detector = new CvBlobDetector();
@@ -331,9 +358,17 @@ namespace Segmentación_de_colores__HSV_
 
         private void btnORG_Click(object sender, EventArgs e)
         {
-            pictureBoxOrigin.Image = img.ToBitmap();
-            btnORG.Enabled = false;
-            btnHue.Enabled = true;
+            if(img!=null)
+            {                
+                pictureBoxOrigin.Image = img.ToBitmap();
+                
+            }
+            else
+            {
+                importar();
+            }
+            
+           
         }
     }
 }
