@@ -88,7 +88,7 @@ namespace Segmentación_de_colores__HSV_
                 {
                     for (int j = 0; j < img.Width; j++)
                     {
-                        if (img[i, j].Hue <= (trackHueMax.Value))
+                        if (img[i, j].Hue <= (trackHueMax.Value*0.5))
                         {
                             imgHue[i, j] = new Gray(img[i, j].Hue);
                         }

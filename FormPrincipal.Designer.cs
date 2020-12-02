@@ -456,7 +456,7 @@
             // 
             this.btnORG.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnORG.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnORG.Location = new System.Drawing.Point(651, 39);
+            this.btnORG.Location = new System.Drawing.Point(624, 41);
             this.btnORG.Name = "btnORG";
             this.btnORG.Size = new System.Drawing.Size(25, 68);
             this.btnORG.TabIndex = 28;
@@ -491,7 +491,7 @@
             // 
             this.btnHue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnHue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHue.Location = new System.Drawing.Point(606, 39);
+            this.btnHue.Location = new System.Drawing.Point(593, 41);
             this.btnHue.Name = "btnHue";
             this.btnHue.Size = new System.Drawing.Size(25, 68);
             this.btnHue.TabIndex = 1;
